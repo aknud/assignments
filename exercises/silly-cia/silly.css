@@ -1,0 +1,53 @@
+/* Instructions
+Style the article using the following:
+
+-Make the main headline dark green.
+-Use the font family "Georgia" for the main headline and the sub-headline.
+-Center the text of the main headline and the sub-headline.
+-Make the paragraphs have a line height of 25 pixels.
+-Remove the underline from the links.
+-Make the "You might also like" label all uppercase.
+-Bonus: Make an underline appear when you hover over a link.
+-Bonus: Make the image 'float' to the left of the body content. */
+
+body {
+    margin: auto 10px;
+}
+
+h1 {
+    color: darkgreen;
+}
+
+h1, h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+p {
+    line-height: 25px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    display: inline-block;
+}
+
+.lowercase {
+    text-transform: uppercase;
+}
+
+img {
+    float: left;
+    height: 250px;
+    width: 250px;
+    padding: 20px;
+}

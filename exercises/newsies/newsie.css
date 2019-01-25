@@ -1,0 +1,38 @@
+body {
+    margin: 20px 10%;
+}
+header {
+    text-align: center;
+}
+h2 {
+    font-family: 'Abril Fatface', cursive;
+}
+h3 {
+    font-family: 'Lato', sans-serif;
+}
+
+img {
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.author {
+    color: #4F689F;
+}
+
+.author, .read-time {
+    display: inline-block;
+}
+
+article p {
+    display: inline-block;
+    width: 31%;
+    vertical-align: text-top;
+    margin: 10px;
+}
+
+p:last-child {
+    display:  block;
+    width: 100%
+}
