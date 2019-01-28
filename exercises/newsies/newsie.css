@@ -1,38 +1,52 @@
 body {
     margin: 20px 10%;
 }
+
+/* CSS for news article */
+
 header {
     text-align: center;
 }
+
 h2 {
     font-family: 'Abril Fatface', cursive;
+    font-size: 32px;
 }
+
 h3 {
     font-family: 'Lato', sans-serif;
 }
 
-img {
+.main-img {
     display: block;
     width: 100%;
     margin: 20px auto;
 }
 
-.author {
-    color: #4F689F;
-}
 
-.author, .read-time {
-    display: inline-block;
-}
-
-article p {
+p {
     display: inline-block;
     width: 31%;
     vertical-align: text-top;
     margin: 10px;
 }
 
-p:last-child {
-    display:  block;
-    width: 100%
+img {
+    width: 100%;
+    margin: 10px 0px;
+}
+.author {
+    color: #4F689F;
+}
+                
+.author, .read-time {
+    display: inline-block;
+}
+
+/* CSS for classifieds */
+
+.classified-title {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 48px;
 }
