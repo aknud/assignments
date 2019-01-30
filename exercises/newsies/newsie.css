@@ -50,3 +50,9 @@ img {
     text-align: center;
     font-size: 48px;
 }
+.title-big {
+    border: 3px solid black;
+}
+.title-thin {
+    border: 1.5px solid black;
+}

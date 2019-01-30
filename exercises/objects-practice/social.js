@@ -96,3 +96,8 @@ console.log(amyInfo.siblings[2].children = {name: "Siena", age: 0})
 // Add 2 items to at least one of the arrays in your data
 amyInfo.siblings[1].hobbies = ["video-games", "3D-printing", "racquet-ball"]
 console.log(amyInfo.siblings[1].hobbies)
+
+for(let i = 0; i < amyInfo.siblings.length; i++){
+    amyInfo.siblings[i].someArr = [{name: "", age: 0} ];
+    console.log(amyInfo.siblings[i])
+}

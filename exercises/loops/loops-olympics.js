@@ -72,8 +72,8 @@ var peopleArray = [
 
 
 
-// Gold Medal
-// 1.Create an array that mimics a grid like the following using for loops:
+// Gold Medal - Nesting
+// Create an array that mimics a grid like the following using nested for loops:
 
 let grid = []
 for(let i = 0; i < 3; i++){
@@ -84,7 +84,7 @@ console.log("grid: ", grid)
 // [[0, 0, 0], 
 // [0, 0, 0], 
 // [0, 0, 0]]
-// 2.Create an array that mimics a grid like the following using for loops:
+// 2.Create an array that mimics a grid like the following using nested for loops:
 let grid2 = []
 for(let i = 0; i < 3; i++){
   grid2.push([i,i,i])
@@ -93,20 +93,21 @@ console.log("grid2: ", grid2)
 // [[0, 0, 0], 
 // [1, 1, 1], 
 // [2, 2, 2]]
-// 3.Create an array that mimics a grid like the following using for loops:
+// 3.Create an array that mimics a grid like the following using nested for loops:
 let grid3 = []
 for(let i = 0; i < 3; i++){
   grid3.push([0,1,2])
+  //do another for loop
 }
 console.log("original grid3: ", grid3)
 // [[0, 1, 2], 
 // [0, 1, 2], 
 // [0, 1, 2]]
 
-//Bonus: Given a grid like the previous ones, write a for loop that would change every number to an x.
-// var grid = [[0, ...], 
-//             [0, ...], 
-//             [0,...], ...] 
+//Bonus: Given a grid like the previous ones, write a nested for loop that would change every number to an x.
+// var grid = [[x, ...], 
+//             [x, ...], 
+//             [x,...], ...] 
 
 function changeGrid (grid){
   for(let i = 0; i < grid.length; i++){

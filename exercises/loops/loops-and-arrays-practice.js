@@ -57,6 +57,7 @@ for(let i = 0; i < MMFRFans.length; i++){
 for(let i = 0; i < MMFRFans.length; i++){
     console.log(MMFRFans[i].age > 17 ? `${MMFRFans[i].name} is old enough to see Mad Max.` : `${MMFRFans[i].name} is not old enough`)
 }
+console.log(MMFRFans[i].name + " is old enough to see mad max")
 
 
 // #2
