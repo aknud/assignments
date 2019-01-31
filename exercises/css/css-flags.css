@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flag {
+    height: 400px;
+    width: 600px;
+    border: 1px solid black;
+    display: inline-block;
+    margin: 10px;
+}
+
+.france {
+    display: flex;
+}
+.france-blue {
+    background-color: blue;
+    width: calc(100% / 3);
+}
+.france-white {
+    width: calc(100% / 3);
+}
+.france-red {
+    background-color: red;
+    width: calc(100% / 3);
+}
+
+.germany div {
+    height: calc(100% / 3);
+}
+.germany-black {
+    background-color: black;
+}
+.germany-red {
+    background-color: red;
+}
+.germany-yellow {
+    background-color: yellow;
+}
+
+

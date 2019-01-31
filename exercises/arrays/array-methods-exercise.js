@@ -2,12 +2,23 @@
 // 10 JANUARY 2017
 // Create a new JavaScript file and put these two arrays at the beginning. You will write a single function that performs many operations on them.
 
-// var fruit = ["banana", "apple", "orange", "watermelon"];
-// var vegetables = ["carrot", "tomato", "pepper", "lettuce"];
+var fruit = ["banana", "apple", "orange", "watermelon"];
+var vegetables = ["carrot", "tomato", "pepper", "lettuce"];
 // After every command, use console.log() to inspect your arrays. A good way to do that is to do something like:
 
 // console.log("fruit: ", fruit);
 // console.log("vegetables: ", vegetables);
+
+function arrayMethods(){
+    vegetables.pop()
+    fruit.shift()
+    fruit.push(fruit.indexOf("orange"))
+    vegetables.push(vegetables.length)
+    let food = [...fruit, ...vegetables];
+    food.splice(4, 2)
+    return food.reverse().join()
+}
+console.log(arrayMethods())
 // Remove the last item from the vegetable array.
 // Remove the first item from the fruit array.
 // Find the index of "orange."
