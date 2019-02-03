@@ -12,6 +12,7 @@
     margin: 10px;
 }
 
+/*------------ FRANCE ----------*/
 .france {
     display: flex;
 }
@@ -26,7 +27,7 @@
     background-color: red;
     width: calc(100% / 3);
 }
-
+/*------Germany------------*/
 .germany div {
     height: calc(100% / 3);
 }
@@ -40,4 +41,44 @@
     background-color: yellow;
 }
 
+/*------Madagascar---------*/
+.mada-red {
+    background-color: red; 
+    height: 50%;
+    width: calc(100% / 1.55);
+    float: right;
+}
+.mada-green {
+    background-color: green;
+    height: 50%;
+    width: calc(100% / 1.55);
+    float: right;
+}
 
+/*-----------Switzerland---------*/
+.switzerland {
+    background-color: red;
+}
+.vertical {
+    background-color: #fff;
+    width: 100px;
+    height: calc(100% / 1.4);
+    margin: 57px auto;
+}
+.horizontal {
+    background-color: #fff;
+    height: 100px;
+    width: 50%;
+    margin: -250px auto;
+}
+
+/*--------Sweden----------*/
+.sweden {
+    background-color: #2969A2;
+}
+.swede-vertical {
+    background-color: #F7CD46;
+}
+.swede-horizontal {
+    background-color: #F7CD46;
+}

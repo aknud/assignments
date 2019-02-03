@@ -72,3 +72,16 @@ document.getElementById("clear-button").addEventListener('click', clearMessages)
 
 ///////// Gold //////////////
 
+
+function addMessageFunc(e){
+    e.preventDefault()
+    let newMsg = document.addMessage.getElementsByTagName("input")[0].value;
+    // console.log(newMsg)
+    let newMsgDiv = document.createElement("div").classList = "message left";
+    newMsgDiv.innerText = newMsg;
+    console.log(newMsgDiv)
+    let messagesContainer = document.getElementsByClassName("messages")[0];
+    messagesContainer.appendChild(newMsgDiv)
+}
+
+document.addMessage.addEventListener("submit", addMessageFunc)

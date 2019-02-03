@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+body {
+    background-color: #277CEF;
+}
+main {
+    background-image: url("https://vignette.wikia.nocookie.net/central/images/f/f9/Tumblr_static_d4orqhycyu8gk8gc8k8ss484c.jpg/revision/latest?cb=20150215173106");
+    background-position: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+footer {
+    width: 100%;
+    background-image: url("https://i.pinimg.com/736x/18/1c/d9/181cd9132f3c1c96d5beb322932add06--super-mario-portfolio.jpg");
+    padding: 25px;
+    position: fixed;
+    bottom: 0;
+}
+
+header h1  {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 46px;
+    text-align: center;
+    margin: 35px;
+    color: red;
+    text-shadow: 5px 5px 10px blue;
+}
+
+input {
+    font-size: 18px;
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+}
+
+.pest-containers {
+    display: inline-block;
+    background-color: #FDC008;
+    width: 25%;
+    height: 350px;
+    border-radius: 15px;
+    margin: 10px;
+}
+.goomba {
+    background-color: red;
+}
+.bomb {
+    background-color: #5fcd42;
+}
+.pest-containers h1 {
+    color: #277CEF;
+    text-shadow: 1px 1px 2px black;
+    margin: 10px;
+    font-size: 34px;
+}
+.pest-containers p {
+    margin: 5px;
+}
+
+.pic {
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+}
+.coin-pic {
+    float: right;
+    height: 50px;
+    width: 50px;
+    padding: 8px;
+    border-radius: 50px;
+}
+.total-section {
+    display: flex;
+    margin: 0 auto;
+    padding: 20px;
+    width: 320px;
+    font-size: 28px;
+    font-family: 'Press Start 2P', cursive;
+    
+}
+.total {
+    background-color: #277CEF;
+    text-align: left;
+    color: #5fcd42;
+    margin: auto;
+}
+
+#total-amount {
+    margin: auto;
+}
+
+.mario-info {
+    background-color: #fff;
+    width: 300px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
