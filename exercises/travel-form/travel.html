@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Travel Form</title>
+</head>
+<body>
+    <header>
+        <h1>Travel Form</h1>
+    </header>
+    <main>
+        <form name="travelForm">
+            <fieldset class="info">
+                <legend>Basic Info:</legend>
+                <input type="text" name="firstName" id="" placeholder="First Name" required>
+                <input type="text" name="lastName" placeholder="Last Name" required>
+                <input type="number" name="age" placeholder="age" min="1" required>
+                <label for="female">female</label>
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="other">Other</label>
+                <input type="radio" name="gender" id="other" value="other">
+            </fieldset>
+
+            <fieldset class="destination">
+                <legend>Destination:</legend>
+                <label for="location">Choose Destination:</label>
+                <select name="location" id="location" required>
+                    <option value="" >Please Select a Destination</option>
+                    <option value="Thailand">Thailand</option>
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="Laos">Laos</option>
+            </select>
+            </fieldset>
+            
+            <fieldset class="diet">
+                <legend>Dietary Restrictions</legend>
+                <label for="vegetarian">Vegetarian</label>
+                <input type="checkbox" name="diet" id="vegetarian" value="vegetarian">
+                <label for="gluten">Gluten Free</label>
+                <input type="checkbox" name="diet" id="gluten" value="gluten-free">
+                <label for="lactose">Lactose Intolerant</label>
+                <input type="checkbox" name="diet" id="lactose" value="Lactose-intolerant">
+                <label for="otherDiet">Other Dietary Restriction</label>
+                <input type="checkbox" name="diet" id="otherDiet" value="otherDiet">
+                <input type="text" id="otherDietValue" name="diet">
+            </fieldset>
+            <button type="submit">Submit</button>
+        </form>
+
+    </main>
+    <footer>
+        <p>&copy;Amy Knudson 2019</p>
+    </footer>
+    <script src="travel.js"></script>
+</body>
+</html>
