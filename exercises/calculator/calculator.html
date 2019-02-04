@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="calculator.css">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <header>
+        <h1>Simple Calculator</h1>
+        <h2>Do your simple calculations here!</h2>
+    </header>
+    <main>
+        <section class="add-section">  
+            <h3>Addition</h3>
+            <form name="addition" >
+                <input name="addNum1" type="number">
+                <span class="operator">+</span>
+                <input name="addNum2" type="number">
+                <button class="add-btn">=</button>
+                <span class="total" id="add-ttl"></span>
+            </form>
+        </section>
+        <section class="multiply-section">
+            <h3>Multiplication</h3>
+            <form name="multiplication">
+                <input name="timesNum1" type="number">
+                <span class="operator">x</span>
+                <input name="timesNum2" type="number">
+                <button class="times-btn">=</button>
+                <span class="total" id="times-ttl"></span>
+            </form>
+        </section>
+        <section class="subtraction-section">
+            <h3>Subtraction</h3>
+            <form name="subtraction">
+                <input name="minusNum1" type="number">
+                <span class="operator">-</span>
+                <input name="minusNum2" type="number">
+                <button class="minus-btn">=</button>
+                <span class="total" id="minus-ttl" ></span>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy Amy Knudson 2019</p>
+    </footer>
+    <script src="calculator.js"></script>
+</body>
+</html>
+
+<!-- You will have one section (<div>) for each math operation (so 3 sections) total
+-Each section has two inputs to take the first and second numbers
+-Each section will have a button to perform the operation
+-You will inject the result into the HTML (not an alert)
+-Your website will have 3 colors
+-Your website will have proper padding/spacing to lay things out nicely -->

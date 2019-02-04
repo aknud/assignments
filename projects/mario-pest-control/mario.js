@@ -15,6 +15,5 @@ const update = (e) => {
     addPests(goombaCount, bombCount, cheepCount);
 }
 const addPests = (x,y,z) => totalOutput.innerText = x + y + z;
-goombaInput.addEventListener('input', update)
-bombInput.addEventListener('input', update)
-cheepInput.addEventListener('input', update)
+
+counter.addEventListener("input", update)
