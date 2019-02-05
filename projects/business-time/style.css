@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+body {
+    background-image: url("https://spacetourismguide.com/wp-content/uploads/2018/07/Stargazing-near-Salt-Lake-City-Aqua-Mechanical-via-Flickr.jpg")
+}
+.main-nav {
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    /* background-color: #161D5C ; */
+    /* background-image: linear-gradient(to right, #161D5C 0%, #1A1F61 48%, #161D5C 99%); */
+}
+/* ----- Hamburger Menu -----*/
+.hamburger {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  /* Rotate first bar */
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+  }
+  
+  /* Fade out the second bar */
+  .change .bar2 {
+    opacity: 0;
+  }
+  
+  /* Rotate last bar */
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+  }
+
+  /*-------------------------------*/
+
+footer {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    color: lightskyblue;
+}
