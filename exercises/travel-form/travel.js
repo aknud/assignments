@@ -2,11 +2,9 @@ var form = document.travelForm;
 var otherCheckbox = document.querySelector('input[value="otherDiet"]');
 var otherText = document.querySelector('input[id="otherDietValue"]');
 otherText.style.visibility = 'hidden';
-
 otherCheckbox.onchange = function() {
   if(otherCheckbox.checked) {
     otherText.style.visibility = 'visible';
-    otherText.value = '';
   } else {
     otherText.style.visibility = 'hidden';
   }
@@ -17,9 +15,11 @@ function findRestrictions(){
     for(let i = 0; i < form.diet.length; i++){
         console.log(form.diet[i])
         if(form.diet[i].checked){
-            console.log(`${form.diet[i].value} is checked`)
             restrictions += `${form.diet[i].value}, `
         }
+    }
+    if (otherText.value){
+        restrictions += otherText.value
     }
     return restrictions
 }
