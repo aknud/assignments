@@ -107,3 +107,14 @@ section {
     margin: 10pt auto;
     padding: 10px;
 }
+
+
+@media (min-width: 800px){
+    section {
+        width: 50%;
+        margin: 50px auto;
+    }
+    .large-input{
+        height: 225pt;
+    }
+}

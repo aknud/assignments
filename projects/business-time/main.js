@@ -1,6 +1,8 @@
+
+
 var dropDown = document.getElementsByClassName("dropDown")[0];
-let msg = document.contact.message;
-console.log(msg)
+let sendBtn = document.contact.sendBtn;
+console.log(sendBtn)
 
 function hamburgerX(x) {
     x.classList.toggle("change");
@@ -9,7 +11,10 @@ function hamburgerX(x) {
 
 function msgHandler(e){
   e.preventDefault();
-  console.log(e.target.value)
+  console.log(e)
+  swal({
+    text: `Thank you for your feedback, ${e.target.name.value}. We'll be in touch soon.`
+  })
 }
 
-msg.addEventListener("input", msgHandler)
+contact.addEventListener("submit", msgHandler)

@@ -13,8 +13,6 @@ body {
   height: 50px;
   display: flex;
   justify-content: space-between;
-  /* background-color: #161D5C ; */
-  /* background-image: linear-gradient(to right, #161D5C 0%, #1A1F61 48%, #161D5C 99%); */
 }
 
 
@@ -85,4 +83,10 @@ footer {
   position: absolute;
   bottom: 0;
   color: lightskyblue;
+}
+
+@media(min-width: 800px){
+  body{
+    background-size: cover;
+  }
 }
