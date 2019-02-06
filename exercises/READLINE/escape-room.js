@@ -3,6 +3,7 @@ let response2, response3;
 const options = ["Put hand in hole", "Find the key", "Open the door"];
 const options2 = ["Wait, but what is this hole though??", "This place is super scary. Unlock the door.", "Ratch around for some interesting cannibal treasure."];
 const options3 = ["You start screaming for help in desparation.", "You keep looking for a key.", "You try knocking politely on the door.", "That hole might have something in it. You put your hand in it."] 
+
 let response = ask.keyInSelect(options, "Actual cannibal Shia Lebouf has you locked in a room. The door is locked and there is a hand-sized hole in the wall. \n These are your options. Choose one. Choose wisely...")
 
 

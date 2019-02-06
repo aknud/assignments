@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="contact.css">
     <title>Contact</title>
 </head>
 <body>
-    <h1>Get in Touch!</h1>
+    <nav class="main-nav">
+        <div class="dropDown">
+            <a class="nav-links"
+            href="index.html">SLC Haunts</a>
+            <a class="nav-links" href="fun.html">Lark or Caper</a>
+            <a class="nav-links" href="nosh.html">Nosh and Swig</a>
+            <a class="nav-links" href="contact.html">Talk About It</a> 
+        </div>
+        
+        <div class="hamburger" onclick="hamburgerX(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </nav> 
+    <header>
+        <h1>Get in Touch!</h1>
+    </header>
+    <main>
+        <section>
+            <form name="contact" class="contact-form">
+                <input type="text" class="small-inputs" name="name" placeholder="Name">
+                <input type="email" class="small-inputs" name="email" placeholder="Email">
+                <textarea type="text" class="large-input" name="message" id="" placeholder="Enter your message here"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <script src="main.js"></script>
 </body>
 </html>
