@@ -13,10 +13,10 @@
     <nav class="main-nav">
         <div class="dropDown">
             <a class="nav-links"
-            href="index.html">SLC Haunts</a>
-            <a class="nav-links" href="fun.html">Lark or Caper</a>
-            <a class="nav-links" href="nosh.html">Nosh and Swig</a>
-            <a class="nav-links" href="contact.html">Talk About It</a> 
+            href="index.html">Home</a>
+            <a class="nav-links" href="fun.html">Places & Activities</a>
+            <a class="nav-links" href="nosh.html">Food & Drink</a>
+            <a class="nav-links" href="contact.html">Contact</a> 
         </div>
         
         <div class="hamburger" onclick="hamburgerX(this)">
@@ -31,9 +31,12 @@
     <main>
         <section>
             <form name="contact" class="contact-form">
-                <input type="text" class="small-inputs" name="name" placeholder="Name">
-                <input type="email" class="small-inputs" name="email" placeholder="Email">
-                <textarea type="text" class="large-input" name="message" id="" placeholder="Enter your message here"></textarea>
+                <input type="text" class="small-inputs" name="name" placeholder="Name"
+                required>
+                <input type="email" class="small-inputs" name="email" placeholder="Email"
+                required>
+                <textarea type="text" class="large-input" name="message" id="" placeholder="Enter your message here" required
+                ></textarea>
                 <button type="submit" name="sendBtn">Send</button>
             </form>
         </section>

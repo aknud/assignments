@@ -3,11 +3,13 @@
   padding: 0;
   box-sizing: border-box;
   text-align: center;
+  
 }
 body {
   background-image: url("https://spacetourismguide.com/wp-content/uploads/2018/07/Stargazing-near-Salt-Lake-City-Aqua-Mechanical-via-Flickr.jpg");
   display: flex;
   flex-direction: column;
+  font-family: 'Staatliches', cursive;
 }
 .main-nav {
   height: 50px;
@@ -59,7 +61,7 @@ body {
 
 .show {
   display: flex;
-  background-color: grey;
+  background-color: rgba(251, 246, 246, 0);
   height: max-content;
   width: 100%;
   position: absolute;
@@ -67,14 +69,18 @@ body {
 }
 .nav-links {
   margin: auto;
+  padding: 3px;
   text-decoration: none;
-  color: blue;
+  color: antiquewhite;
+  
+  letter-spacing: 4px;
 }
 
 header {
   color: antiquewhite;
   padding: 10px;
-  margin: 10px;
+  margin: 15% auto;
+  letter-spacing: 2.5px;
 }
 
 footer {
@@ -82,11 +88,24 @@ footer {
   text-align: center;
   position: absolute;
   bottom: 0;
-  color: lightskyblue;
+  color: rgba(250, 235, 215, 0.4);
 }
 
 @media(min-width: 800px){
   body{
     background-size: cover;
+  }
+  header {
+    margin: 2% auto;
+  }
+  .show {
+    flex-direction: row;
+    justify-content: center;
+    font-size: 18pt
+  }
+  .nav-links {
+    color: antiquewhite;
+    margin: 20px 35px;
+    letter-spacing: 2.5px;
   }
 }

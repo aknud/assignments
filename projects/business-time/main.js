@@ -15,6 +15,8 @@ function msgHandler(e){
   swal({
     text: `Thank you for your feedback, ${e.target.name.value}. We'll be in touch soon.`
   })
+
 }
+
 
 contact.addEventListener("submit", msgHandler)
