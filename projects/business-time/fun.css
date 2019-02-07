@@ -1,90 +1,137 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
-    background-image: url("https://images.unsplash.com/photo-1501258280629-3f30d783139e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-repeat: no-repeat;
-    background-position: 47% 0%;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  background-image: url("https://images.unsplash.com/photo-1501258280629-3f30d783139e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background-repeat: no-repeat;
+  background-position: 47% 0%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'Staatliches', cursive;
 }
 .main-nav {
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-  }
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* ----- Hamburger Menu -----*/
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+}
   
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+  transition: 0.4s;
+}
   
-  /* ----- Hamburger Menu -----*/
-  .hamburger {
-    display: inline-block;
-    cursor: pointer;
-    padding: 10px;
-  }
-    
-  .bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
-    background-color: antiquewhite;
-    margin: 6px 0;
-    transition: 0.4s;
-  }
-    
-  /* Rotate first bar */
-  .change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-    transform: rotate(-45deg) translate(-9px, 6px) ;
-  }
-    
-  /* Fade out the second bar */
-  .change .bar2 {
-    opacity: 0;
-  }
-    
-  /* Rotate last bar */
-  .change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-    transform: rotate(45deg) translate(-8px, -8px) ;
-  }
+/* Rotate first bar */
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+  transform: rotate(-45deg) translate(-9px, 6px) ;
+}
   
-  /*------------------------------*/
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
   
-  .dropDown {
-    display: none;
-    flex-direction: column;
-    justify-content: flex-start;
+/* Rotate last bar */
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+  transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+/*------------------------------*/
+
+.dropDown {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+
+}
+
+.show {
+  display: flex;
+  background-color: rgba(251, 246, 246, 0);
+  height: max-content;
+  width: 100%;
+  position: absolute;
   
+}
+.nav-links {
+  margin: auto;
+  padding: 3px;
+  text-decoration: none;
+  color: antiquewhite;
+}
+
+header {
+  color: black;
+  text-shadow: 1.5px .5px .5px antiquewhite;
+  padding: 10px;
+  margin: 15% auto 20px;
+  letter-spacing: 2.5px;
+  font-size: 16pt;
+}
+
+.title {
+  font-size: 26pt;
+}
+
+.inside, .outside{
+  border: 1px solid whitesmoke;
+  margin: 20px;
+  background-color: rgba(245, 245, 245, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h2 a {
+  text-decoration: none;
+  color: black;
+}
+
+.description {
+  padding: 4px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+span {
+  color: red;
+}
+
+@media (min-width: 800px){
+  .inside, .outside{
+    width: 70%;
+    margin: 30px auto;
   }
-  
   .show {
-    display: flex;
-    background-color: grey;
-    height: max-content;
-    width: 100%;
-    position: absolute;
-    border-radius: 5px;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 18pt;
   }
   .nav-links {
-    margin: auto;
+    color: antiquewhite;
+    margin: 20px 35px;
+    letter-spacing: 2.5px;
+    text-shadow: 1px 1px 1px black;
   }
-  
   header {
-    color: rgb(58, 58, 58);
-    color: black;
-    text-shadow: 1.5px .5px .5px antiquewhite;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
+    margin: 2% auto;
+    text-shadow: none;
   }
-
-  .inside, .outside{
-    border: 1px solid whitesmoke;
-    margin: 20px;
-    background-color: rgba(245, 245, 245, 0.5);
-    padding: 10px;
-    border-radius: 5px;
-  }
+}

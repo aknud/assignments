@@ -65,7 +65,7 @@ body {
   height: max-content;
   width: 100%;
   position: absolute;
-  border-radius: 5px;
+  
 }
 .nav-links {
   margin: auto;
@@ -74,6 +74,9 @@ body {
   color: antiquewhite;
   
   letter-spacing: 4px;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 header {
@@ -104,7 +107,6 @@ footer {
     font-size: 18pt
   }
   .nav-links {
-    color: antiquewhite;
     margin: 20px 35px;
     letter-spacing: 2.5px;
   }
