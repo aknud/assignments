@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="forms.css">
+    <title>Form Practice</title>
+</head>
+<body>
+    <!-- form tags are helpful and semantic -->
+    <form action="">
+        <!-- fieldset tags group your relevent info together in a nice box. Use a legend tag to title your box. You can style the fieldset box further using css. -->
+        <fieldset>
+            <legend>Login Info</legend>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="email" required>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+            <input type="number" name="" id="" min="0" max="100">
+        </fieldset>
+        <fieldset>
+            <legend>Personal Info</legend>
+            <label for="first"></label>
+            <input type="text" name="first" id="first" placeholder="First Name">
+            <input type="text" name="last" id="" placeholder="Last Name">
+            <input type="date" name="date" id="">
+            <input type="week" name="" id="">
+            <label for="search">Search</label>
+            <input type="search" name="searchbox" id="search">
+            <input type="color" name="" id="">
+        </fieldset>
+        
+        <button type="submit">submit</button>
+    </form>
+    <script src="forms.js"></script>
+</body>
+</html>
