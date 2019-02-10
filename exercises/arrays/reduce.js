@@ -22,13 +22,17 @@ function stringConcat(arr) {
 
 // 3) Turn an array of voter objects into a count of how many people voted
 function totalVotes(arr) {
-   var count = 0;
-   arr.map(person => {
-       if(person.voted){
-           count++
-       }
-   })   
-   return count
+//    var count = 0;
+//    arr.map(person => {
+//        if(person.voted){
+//            count++
+//        }
+//    })   
+//    return count
+
+    return arr.reduce(function(acc, voter){
+        return voter.voted ? acc + 1 : acc + 0
+    },0)
 }
 
 var voters = [
@@ -76,7 +80,7 @@ var arrays = [
     [4, 5, 6]
 ];
 
-console.log(flatten(arrays)); // ["1", "2", "3", true, 4, 5, 6];
+// console.log(flatten(arrays)); // ["1", "2", "3", true, 4, 5, 6];
 // Note: Take a look at Array.concat() to help with this one
 
 // 6) Given an array of potential voters, return an object representing the results of the vote
@@ -98,12 +102,36 @@ var voters = [
 ];
 
 function voterResults(arr) {
-   return arr.reduce((allVotes, vote) => {
-        
-   },{})
+    var results = { 
+        youngVotes: 0,
+        youth: 0,
+        midVotes: 0,
+        mids: 0,
+        oldVotes: 0,
+        olds: 0 
+      }
+    arr.reduce((total, voter) => {
+        if(voter.age > 17 && voter.age < 26){
+            results.youngVotes++
+            if(voter.voted){
+                results.youth++
+            }
+        } else if(voter.age > 25 && voter.age < 36){
+            results.midVotes++
+            if(voter.voted){
+                results.mids++
+            }
+        } else if(voter.age > 35 && voter.age < 56){
+            results.oldVotes++
+            if(voter.voted){
+                results.olds++
+            }
+        }
+   }, 0)
+   return results
 }
 
-console.log(voterResults(voters)); // Returned value shown below:
+// console.log(voterResults(voters)); // Returned value shown below:
 /*
 { youngVotes: 1,
   youth: 4,
