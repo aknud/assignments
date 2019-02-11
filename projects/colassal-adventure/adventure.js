@@ -52,13 +52,17 @@ console.log(`Welcome ${playerInfo.name}.\nBe careful, there are many monsters lu
 
 
 while(playerInfo.health > 0 && playerInfo.expLvl <= 100){
-    let action = ask.keyIn("type [w] for walk, [i] for inventory ", {limit: "$<wi>"} );
+    let action = ask.keyIn("type [w] for walk, [i] for inventory, [q] to give up adventuring.", {limit: "$<wiq>"} );
+    if(playerInfo.expLvl >= 100){
+        console.log("You won the game!")
+    }
     if(action === "w"){
         walk()
     } else if( action === "i"){
         console.log(playerInfo)
+    } else if(action === "q"){
+        break;
     }
-    playerInfo.expLvl === 100 ? console.log("You won the game!") : '';
 }
 
 function walk(){
@@ -84,6 +88,7 @@ function getAttacked(){
         if(escapeChance === 1){
             console.log("You escaped!\n")
         }else {
+            console.clear()
             console.log("Escape is impossible!\n")
             console.log(`You are fighting ${enemy.name} with ${weapon}.`)
             fight(enemy, weapon) 
@@ -95,7 +100,7 @@ function gainExp(){
     playerInfo.expLvl += 5;
     if(playerInfo.expLvl >= 10 && !playerInfo.weapons.includes("silver stakes")){
         playerInfo.weapons.push("silver stakes")
-    } else if( playerInfo.expLvl >= 20 && !playerInfo.weapons.includes("patronus spell")){
+    } else if(playerInfo.expLvl >= 20 && !playerInfo.weapons.includes("patronus spell")){
         playerInfo.weapons.push("patronus spell")
     } else if( playerInfo.expLvl === 30 && !playerInfo.weapons.includes("elder wand")){
         playerInfo.weapons.push("elder wand")
@@ -116,6 +121,7 @@ function hitStrength(){
 }
 
 function victory(enemy, weapon){
+    console.clear()
     console.log(`You defeated ${enemy.name} with one blow using ${weapon}! ${weapon} was destroyed in the process. 
     You gained ${enemy.reward} experience points and ${enemy.bounty} from this battle.`);
     playerInfo.expLvl += enemy.reward;
@@ -132,12 +138,13 @@ function fight(enemy, weapon){
             let damageGiven = hitStrength();
             let damageTaken = hitStrength();
             enemy.health -= damageGiven;
-            console.log(`You hit ${enemy.name} with ${damageGiven}`)
+            console.log(`You hit ${enemy.name} with ${damageGiven}. Their health is now ${enemy.health}.`)
             playerInfo.health -= damageTaken;
             console.log(`You took a hit of ${damageTaken}, your health is now ${playerInfo.health}`)
             if(enemy.health <= 0){
                 playerInfo.expLvl += enemy.reward;
                 playerInfo.health += 50;
+                playerInfo.loot.push(enemy.bounty);
                 console.log(`You've defeated ${enemy.name}! Your health is now ${playerInfo.health} and 
                 you gained ${enemy.reward} experience points and ${enemy.bounty} from this battle.`)
                 enemies.splice(enemies.indexOf(enemy.name), 1);
