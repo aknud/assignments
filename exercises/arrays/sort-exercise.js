@@ -51,3 +51,5 @@ function byAge(arr){
 //         age: 77
 //     }
 // ]));
+
+console.log(5 += 1)

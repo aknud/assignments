@@ -1,0 +1,67 @@
+{
+    "appetizers": [
+        {
+            "name":"Spring Rolls",
+            "ingredients": ["carrots", "mushrooms", "rice noodles"],
+            "description": "Fresh spring rolls filled with veggies."
+        }, 
+        {
+            "name":"Nachos",
+            "ingredients": ["chips", "cheese", "salsa"],
+            "description": "Chips with cheese and salsa melted to a delicious ooze."
+        }, 
+        {
+            "name":"Wontons",
+            "ingredients": ["crab", "cream cheese"],
+            "description": "Crab and cream cheese filled wontons fried to a golden crisp."
+        }
+    ],
+    "cold-sandwiches": [
+        {
+            "name":"BLT",
+            "ingredients": ["bacon", "lettuce", "tomatoes"],
+            "description": "Classic bacon lettuce and tomatoes. No secrets here."
+        },
+        {
+            "name":"PB&J",
+            "ingredients": ["Crunchy Peanut Butter", "Grape Jelly", "Wheat Bread"],
+            "description": "Classic PB and J with crunchy peanut butter because we aren't heathens."
+        }
+    ],
+    "hot-sandwiches": [
+        {
+            "name":"Cuban",
+            "ingredients": ["Ham", "swiss cheese", "pickles"],
+            "description": "Order this delicious sandwich. No regrets"
+        },
+        {
+            "name":"Philly Cheesesteak",
+            "ingredients": ["beef", "mushrooms", "onions", "cheese"],
+            "description": "Classic. Just the way Philedelphians would want it."
+        }
+    ],
+    "desserts": [
+        {
+            "name":"Mango Sticky Rice",
+            "ingredients": ["Mangos", "sticky rice", "coconut milk"],
+            "description": "The perfect blend of mango coconut and rice."
+        },
+        {
+            "name":"Apple Pie",
+            "ingredients": ["apples", "pie crust", "ice cream"],
+            "description": "Apple pie served with vanilla ice-cream because this is 'Murica."
+        }
+    ],
+    "drinks": [
+        {
+            "name":"Coke",
+            "ingredients": ["sugar", "poison", "bubbles"],
+            "description": "For the sugar fiends here."
+        },
+        {
+            "name":"Water",
+            "ingredients": ["ice-melted"],
+            "description": "The clearest water fresh from our taps."
+        }
+    ]
+}

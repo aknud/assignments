@@ -2,25 +2,25 @@ const ask = require("readline-sync");
 
 let enemies = [
     {
-        name: "vampire",
+        name: "Vampire",
         health: 50,
-        strength: 10,
+        strength: "drinking all the blood",
         weakness: "silver stakes",
         reward: 25,
         bounty: "Amulet of Healing"
     },
     {
-        name: "dementors",
+        name: "Dementors",
         health: 75,
-        strength: 15,
+        strength: "sucking out all the happiness",
         weakness: "patronus spell",
         reward: 35,
         bounty: "Chocolate"
     },
     {
-        name: "voldermort",
+        name: "Voldermort",
         health: 100,
-        strength: 20,
+        strength: "avada kedavra curse",
         weakness: "elder wand",
         reward: 50,
         bounty: "Peace"
@@ -28,21 +28,27 @@ let enemies = [
     {
         name: "Shia Lebouf",
         health: 125,
-        strength: 25,
+        strength: "cannibalism",
         weakness: "axe",
         reward: 75,
         bounty: "Shia's decapitated head"
+    },
+    {
+        name: "Marcus Chair Thief",
+        health: 25,
+        strength: "failing grade",
+        weakness: "boot",
+        reward: 25,
+        bounty: "Freedom to sit in your own chair"
     }
 ]
 
 let playerInfo = {
     health: 100,
-    weapons: ["stick"],
+    weapons: ["stick", "boot"],
     expLvl: 0,
     loot: []
 }
-
-
 
 console.clear()
 playerInfo.name = ask.question("Welcome Stranger, we don't get many visitors in these parts. Does the stranger have a name?\n")
@@ -50,12 +56,12 @@ console.clear()
 console.log(`Welcome ${playerInfo.name}.\nBe careful, there are many monsters lurking about. You never know when you'll get attacked by one. Stay vigilant!`);
 
 
-
-while(playerInfo.health > 0 && playerInfo.expLvl <= 100){
-    let action = ask.keyIn("type [w] for walk, [i] for inventory, [q] to give up adventuring.", {limit: "$<wiq>"} );
+while(playerInfo.health > 0 && playerInfo.expLvl <= 150){
     if(playerInfo.expLvl >= 100){
-        console.log("You won the game!")
+        console.log("You've reached the maximum experience level. You are a Boss master. You win the game and life!")
+        break;
     }
+    let action = ask.keyIn("type [w] for walk, [i] for inventory, [q] to give up adventuring.", {limit: "$<wiq>"} );
     if(action === "w"){
         walk()
     } else if( action === "i"){
@@ -75,7 +81,7 @@ function walk(){
 
 function getAttacked(){
     console.clear()
-    let fightOrFlight = ask.keyIn("An enemy approaches! Type [r] to try and escape or [f] to fight the enemy\n", {limit: "$<rf>"})
+    let fightOrFlight = ask.keyIn(`\x1b[33m An enemy approaches! Type [r] to try and escape or [f] to fight the enemy \x1b[0m \n`, {limit: "$<rf>"})
     let enemy = enemySelector();
     let weapon = weaponSelector();
     if(fightOrFlight === "f"){
@@ -86,10 +92,10 @@ function getAttacked(){
     else if (fightOrFlight === "r"){
         let escapeChance = Math.floor(Math.random() * 2)
         if(escapeChance === 1){
-            console.log("You escaped!\n")
+            console.log(`You escaped!\n`)
         }else {
             console.clear()
-            console.log("Escape is impossible!\n")
+            console.log(`Escape is impossible!\n`)
             console.log(`You are fighting ${enemy.name} with ${weapon}.`)
             fight(enemy, weapon) 
         }
@@ -102,11 +108,11 @@ function gainExp(){
         playerInfo.weapons.push("silver stakes")
     } else if(playerInfo.expLvl >= 20 && !playerInfo.weapons.includes("patronus spell")){
         playerInfo.weapons.push("patronus spell")
-    } else if( playerInfo.expLvl === 30 && !playerInfo.weapons.includes("elder wand")){
+    } else if( playerInfo.expLvl >= 30 && !playerInfo.weapons.includes("elder wand")){
         playerInfo.weapons.push("elder wand")
-    } else if( playerInfo.expLvl === 30 && !playerInfo.weapons.includes("axe")){
+    } else if( playerInfo.expLvl >= 30 && !playerInfo.weapons.includes("axe")){
         playerInfo.weapons.push("axe")
-    }
+    } 
 }
 
 function enemySelector(){ 
@@ -118,6 +124,12 @@ function weaponSelector(){
 }
 function hitStrength(){
     return Math.floor(Math.random()*15)+5
+}
+
+function fightExchange(victim, attacker){
+    let damageGiven = hitStrength();
+    victim.health -= damageGiven;
+    console.log(`\x1b[31m ${attacker.name} hit ${victim.name} with ${damageGiven}. ${victim.name}'s health is now ${victim.health} \x1b[0m`)
 }
 
 function victory(enemy, weapon){
@@ -132,15 +144,11 @@ function victory(enemy, weapon){
 
 function fight(enemy, weapon){
     if(weapon === enemy.weakness){
-        victory()
+        victory(enemy, weapon);
     }else {
         while(playerInfo.health > 0 && enemy.health > 0){
-            let damageGiven = hitStrength();
-            let damageTaken = hitStrength();
-            enemy.health -= damageGiven;
-            console.log(`You hit ${enemy.name} with ${damageGiven}. Their health is now ${enemy.health}.`)
-            playerInfo.health -= damageTaken;
-            console.log(`You took a hit of ${damageTaken}, your health is now ${playerInfo.health}`)
+            fightExchange(enemy, playerInfo);
+            fightExchange(playerInfo, enemy);
             if(enemy.health <= 0){
                 playerInfo.expLvl += enemy.reward;
                 playerInfo.health += 50;
@@ -149,8 +157,8 @@ function fight(enemy, weapon){
                 you gained ${enemy.reward} experience points and ${enemy.bounty} from this battle.`)
                 enemies.splice(enemies.indexOf(enemy.name), 1);
             } 
-            else if(playerInfo.health <= 0){
-                console.log(`${playerInfo.name} was defeated by ${enemy.name}`)
+            if(playerInfo.health <= 0){
+                console.log(`${enemy.name} defeated ${playerInfo.name} with ${enemy.strength}.`)
                 console.log("GAME OVER, MAN. GAME OVER.")
             }
         }
