@@ -142,5 +142,6 @@ img:hover {
     content: "Shia Surprise!"  
 }
 .audio-container {
+    width: max-content;
     margin: auto;
 }
