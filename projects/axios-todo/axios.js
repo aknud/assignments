@@ -4,11 +4,11 @@ let updatedObject = {
     title: "This is an updated todo",
     description: "Oh double wow!"
 }
-let dataArr = [];
+
 axios.get("https://api.vschool.io/amy/todo").then(response => {
-    response.data.map(item => dataArr.push(item))    
-    displayTodos(dataArr)
+    displayTodos(response.data)
 }).catch(error => console.log(error))
+
 
 
 
@@ -22,8 +22,9 @@ function displayTodos(dataArr){
         let pic = document.createElement("IMG");
         let deleteBtn = document.createElement("button")
         let updateBtn = document.createElement("button")
-        let complete = document.createElement("input")
-        complete.setAttribute("type", "checkbox");
+        let complete = document.createElement("button")
+        // complete.setAttribute("type", "checkbox");
+        complete.innerText = "Mark Done"
         //put data into tags
         h1.innerText = `${dataArr[i].title}`
         pTag.innerText = `${dataArr[i].description}`
@@ -33,8 +34,14 @@ function displayTodos(dataArr){
         //add event listeners to buttons
         deleteBtn.addEventListener("click", deleteTodo)
         updateBtn.addEventListener("click", updateTodo)
+        complete.addEventListener("click", markDone)
         listItem.id = `${dataArr[i]._id}`
 
+        // check for items marked done
+        if(dataArr[i].completed){
+            // listItem.style.textDecoration = "line-through"
+            listItem.classList.add("done")
+        }
         // append to the dom
         document.getElementById("mainList").prepend(listItem)
         listItem.appendChild(h1)
@@ -70,8 +77,8 @@ function addTodo(e){
     })
     
 }
-function updateTodo(id, updatedObject){
-    console.log("hey now!")
+function updateTodo(e){
+    console.log(e)
     // axios.put(`https://api.vschool.io/amy/todo/${id}`, updatedObject).then(function(response){
     //     console.log(response.data)
     // }).catch(function(error){
@@ -88,6 +95,19 @@ function deleteTodo(e){
 
 }
 
+function markDone(e){
+    e.target.parentElement.classList.toggle("done")
+    console.log(e)
+    if(e.target.parentElement.classList.value === "done"){
+        axios.put(`https://api.vschool.io/amy/todo/${e.target.parentElement.id}`, {completed: true}).then(response => {
+            console.log(response.data)
+        }).catch(error => console.log(error))
+    } else {
+        axios.put(`https://api.vschool.io/amy/todo/${e.target.parentElement.id}`, {completed: false}).then(response => {
+            console.log(response.data)
+        }).catch(error => console.log(error))
+    }
+}
 
 
 
@@ -103,7 +123,7 @@ function deleteTodo(e){
 //     console.log(error)
 // })
 
-// axios.delete(`https://api.vschool.io/amy/todo/${id}`).then(function(response){
+// axios.delete(`https://api.vschool.io/amy/${id}`).then(function(response){
 //     console.log(response.data)
 // }).catch(function(error){
 //     console.log(error)

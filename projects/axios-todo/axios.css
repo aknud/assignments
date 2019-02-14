@@ -21,4 +21,8 @@ img {
     border-radius: 10px;
 }
 
+.done {
+    text-decoration: line-through;
+}
+
 
