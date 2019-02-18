@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr;
+    background-image: url("http://www.csszengarden.com/214/bamboo.png");
+}
+section {
+    border: 1px solid black;
+}
+.header {
+    background-image: url("http://www.csszengarden.com/214/koi.jpg"); 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+    text-align: center;
+}
+.head-left {
+    background-color: rgba(255, 255, 255, 0);
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr;
+    height: 200px;
+}
+.banner-img {
+    background-image: url("http://www.csszengarden.com/214/enso.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    margin: 5% 40%;
+    opacity: 0.6;
+
+}
+.head-left h1 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 20pt;
+    color: #FFFFFF;
+}
+.head-left h2 {
+    font-family: "Libre Baskerville";
+    color: rgba(255, 255, 255, 0.728);
+    opacity: 0.8;
+    font-size: 14pt;
+}
+
+.head-right {
+    background-color: rgba(255, 255, 255, 0.2);
+    
+}
+.head-right button {
+    font-family: 'Julius Sans One', sans-serif;
+    color: #FFFFFF;
+    opacity: 0.8;
+}
+
+.enlight {
+    background-color: #FFFFFF;;
+    padding: 40px;
+}
+.participate {
+    background-color: rgba(181, 207, 192, 0.643);
+    padding: 40px;
+}
+
+@media (min-width: 1130px){
+    body {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    }
+
+}
