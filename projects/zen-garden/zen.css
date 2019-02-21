@@ -23,7 +23,7 @@ section {
     background-color: rgba(255, 255, 255, 0);
     display: grid;
     grid-template-rows: 2fr 1fr 1fr;
-    height: 200px;
+    /* height: 200px; */
 }
 .banner-img {
     background-image: url("http://www.csszengarden.com/214/enso.svg");
@@ -50,7 +50,7 @@ section {
 
 .head-right {
     background-color: rgba(255, 255, 255, 0.2);
-    opacity: 0.8;
+    /* opacity: 0.8; */
 }
 .head-right button {
     font-family: 'Julius Sans One', sans-serif;
@@ -72,23 +72,126 @@ section {
     right: 15px;
 }
 
-
 .download-files {
     display: none;
 }
 
-.enlight {
+.main {
     display: grid;
     background-color: #FFFFFF;;
-    padding: 20px;
+    padding: 2em;
 }
-.enlight div{
-    padding: 10px;
+
+h3 {
+    margin: 1em 0 0 0;
+    color: #2e484c;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.8em;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+p {
+    line-height: 2;
+    font-size: 1.2em;
+    margin: 0.75em 0;
+    color: #325050;
 }
 .participate {
     background-color: rgba(181, 207, 192, 0.643);
-    padding: 40px;
 }
+.footer {
+    background-image: url("http://www.csszengarden.com/214/koi.jpg");
+    text-align: center;
+}
+.about p {
+    font-family: "Libre Baskerville";
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9em;
+    padding: 10px;
+}
+.specific-words {
+    font-family: none;
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.8);
+}
+.logos {
+    background-image: none;
+    background-color: #134347;
+    padding: 2em 5%;
+}
+a:visited {
+    color: #134347;
+}
+.logos a::before {
+    color: rgba(255, 255, 255, 0.3);  
+    font-size: 36px;
+    margin: 0 0.2em;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.html_icon::before {
+    content: "5";
+    font-family: "icomoon";
+}
+.css_icon::before {
+    content: "3";
+    font-family: "icomoon";
+}
+.cc_icon::before {
+    content: "c";
+    font-family: "icomoon";
+}
+.ally_icon::before {
+    content: "a";
+    font-family: "icomoon";
+}
+.github_icon::before {
+    content: "g";
+    font-family: "icomoon";
+}
+
+.authors {
+    padding: 0;
+    background-color: #d9e3dc;
+    color: #616857;
+}
+h4 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    margin: 12px 0 0 20px;
+}
+.authors p {
+    margin: 0 0 0 20px;
+}
+.by {
+    font-family: "Libre Baskerville";
+    color: #95ac9c;
+}
+
+.links {
+    background-color: rgba(138,188,159,0.5);
+    background-image: url(bamboo.png);
+    padding: 0;
+
+}
+
+.links a {
+    text-decoration: none;
+    color: #607476;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    padding: 20px;
+    border-top: solid 1px #a0b9ad;
+}
+
+
+
+
+
+
 
 
 
