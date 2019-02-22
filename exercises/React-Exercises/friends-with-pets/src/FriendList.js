@@ -62,11 +62,11 @@ const friends = [
 const FriendList = () => {
     let mappedFriends = friends.map((friend, i) => {
         return (
-            <Friend name={friend.name}
-                    age={friend.age}
-                    pets={friend.pets}
-                    key={i + Math.random()}
-                    
+            <Friend 
+              name={friend.name}
+              age={friend.age}
+              pets={friend.pets}
+              key={i + Math.random()}
             />
         )
     })

@@ -9,7 +9,6 @@ const Pet = (props) => {
             </div>
         )
     })
-
     return (
         <div>{mappedPets}</div>
     )
