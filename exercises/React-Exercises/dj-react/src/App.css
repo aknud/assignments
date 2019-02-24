@@ -1,0 +1,14 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.box {
+    border: 1px solid black;
+    height: 85px;
+}
+
+button {
+    height: 85px;
+}
