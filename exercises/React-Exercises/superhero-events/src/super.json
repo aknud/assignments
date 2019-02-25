@@ -1,0 +1,24 @@
+
+
+[
+    {
+        "name" : "Motivational Shia",
+        "catchPhrase" : "Just Do ITTT!!!!",
+        "image" : "https://media.giphy.com/media/87xihBthJ1DkA/giphy.gif"
+    },
+    {
+        "name" : "Sia Shia",
+        "catchPhrase" : "I've got an elastic heart <3 ",
+        "image" : "https://peopledotcom.files.wordpress.com/2016/08/shia-labeouf-600-1.jpg"
+    },
+    {
+        "name" : "Disney Shia",
+        "catchPhrase" : "I can dig it!",
+        "image" : "https://assets.rbl.ms/13334138/980x.jpg"
+    },
+    {
+        "name" : "Actual Cannibal Shia LeBeouf",
+        "catchPhrase" : "Ahh! Your leg! It's caught in a bear trap",
+        "image" : "https://i.pinimg.com/originals/6b/6c/a2/6b6ca2bde7d875fe4d345a2f85e816af.gif"
+    }
+]
