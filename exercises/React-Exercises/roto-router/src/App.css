@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: grey;
+}
+
+body {
+    background-image: url("https://images.unsplash.com/photo-1549119246-cf57ef8a17b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+    background-position: cover;
+}
+.nav {
+    background-color: blue;
+    width: 100%;
+    top: 0;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer {
+    background-color: blue;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+}
+
+.services {
+    background-image: url("http://www.followingthetrend.com/wp-content/uploads/2014/06/face-plunger.jpg");
+    background-size: cover;
+    height: 95vh;
+    display: grid;
+    padding: 20px;
+}
+
+.about {
+    background-image: url("https://www.unasurcds.org/wp-content/uploads/2017/03/tg2wed7c6ywed7u22.jpg");
+    height: 95vh;
+    padding: 20px;
+    display: grid;
+}
+
+.about-box, .home-box, .services-box {
+    background-color: rgba(255, 255, 255, 0.62);
+    display: grid;
+    width: 80%;
+    height: 500px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 10px;
+}
+.about-box h1, h2, p {
+    color: black;
+}
+.about-box h1, .home-box h1, .services-box h1 {
+    text-align: center;
+    color: black;
+}
+
+.home {
+    height: 95vh;
+    padding: 20px;
+    display: grid;
+}
+
