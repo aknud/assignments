@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body {
+  background-image: url("https://namawomen.ae/wp-content/uploads/2016/08/Grey-cement-Seamless-Pattern-For-Website-Background.jpg");
+
+}
+.nav {
+  color: red;
+  background-color: black;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.nav h1 {
+  margin-left: 20px;
+}
+
+.target-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.target {
+  margin: 20px;
+}
+
+.target-title {
+  background-color: rgba(0, 0, 255, 0.523);
+  position: relative;
+  bottom: 40px;
+  color: rgba(255, 255, 255, 0.705);
+  text-align: center;
+}
