@@ -1,0 +1,7 @@
+.open {
+    visibility: visible;
+  }
+  
+  .closed {
+    visibility: hidden;
+  }

@@ -10,14 +10,12 @@ class App extends Component {
     }
   }
   async componentDidMount(){
-      let list = await axios.get("http://s3.amazonaws.com/v-school/data/hitlist.json")
-      list.data[5].image = "https://pbs.twimg.com/media/DMsGz80VQAAeqfw.jpg";
-      this.setState({ arr: list.data})
-      console.log(list.data)
+    let list = await axios.get("http://s3.amazonaws.com/v-school/data/hitlist.json")
+    list.data[5].image = "https://pbs.twimg.com/media/DMsGz80VQAAeqfw.jpg";
+    this.setState({ arr: list.data})
   }
 
   render() {
-    console.log(111,this.state.arr)
     let mappedArr = this.state.arr.map((item, i) => {
       return (
         <div className="target" key={i + Math.random()}>
