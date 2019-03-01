@@ -1,12 +1,24 @@
 import React from "react";
+import { withToggler } from "./Toggle";
 
-const Navbar = () => {
+
+const Navbar = ({on, toggle}) => {
     return (
-        <div>
-            <h1>Start Bootstrap</h1>
-            <button>MENU <i class='fas fa-bars'></i></button>
+        <div className="Nav">
+            <div className="navbar">
+                <a href="#" className="navBrand">Start Bootstrap</a>
+                <button className="menu-btn"  onClick={toggle}>MENU <i class='fas fa-bars'></i></button> 
+            </div>
+            <div className="navbar-nav">
+                <ul className={on ? "open" : "closed"}>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Sample Post</li>
+                    <li>Contact</li>
+                </ul> 
+            </div>
         </div>
     )
 }
 
-export default Navbar;
+export default withToggler(Navbar);

@@ -4,8 +4,8 @@ import Navbar from "./Navbar";
 const Header = () => {
     return (
         <div className="Header">
-            <h1>Header</h1>
             <Navbar />
+            <div className="overlay"></div>
         </div>
     )
 }
