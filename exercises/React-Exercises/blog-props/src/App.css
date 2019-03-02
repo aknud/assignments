@@ -92,6 +92,25 @@
   font-weight: 300;
 }
 
+.btn-container {
+  border-top: 1px solid rgb(211, 211, 211);
+  margin: auto 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.more-posts-btn {
+  background-color: #00657b;
+  padding: 15px;
+  margin: 10px 0;
+  font-size: 12px;
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+/*------- Footer Styles ------*/
 .footer {
   text-align: center;
   display: flex;
@@ -106,6 +125,7 @@
 .footer-icons {
   display: flex;
   justify-content: space-around;
+  width: 100%;
 }
 
 .fab {
@@ -120,6 +140,26 @@
   border-radius: 50%;
   text-align: center;
 }
-/* .fa-twitter {
-  margin: auto;
-} */
+/*------------------------------*/
+
+
+.blog-container {
+  border-bottom: 1px solid rgb(211, 211, 211);
+  margin: 20px;
+  padding: 20px 10px;
+  display: grid;
+  grid-gap: 10px;
+}
+
+.blog-container h1 {
+  font-weight: 800;
+  font-size: 30px;
+
+}
+.blog-container h2 {
+  font-weight: 400;
+}
+
+.blog-container p b, span{
+  font-family: Lora,'Times New Roman',serif;
+}
