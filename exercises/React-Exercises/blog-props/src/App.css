@@ -27,7 +27,6 @@
 
 .navbar {
   display: flex;
-  /* flex-wrap: wrap; */
   justify-content: space-between;
   width: 100%;
   position: absolute;
@@ -39,13 +38,15 @@
 .navBrand {
   font-size: 1.25rem;
   text-decoration: none;
+  font-weight: 800;
   color: black;
 }
 
 .menu-btn {
-  border: 1px solid black;
+  border: 1px solid rgb(211, 211, 211);
   padding: 10px;
   border-radius: 5px;
+  background-color: #fff;
   z-index: 2;
 }
 
@@ -55,13 +56,17 @@
   margin-bottom: 0;
   list-style: none;
   background-color: #fff;
+  color: grey;
   position: absolute;
-  top: 55px;
+  top: 50px;
   z-index: 1;
   width: 100%;
 }
 .navbar-nav li {
-  padding: 10px;
+  padding: 7px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .open {
@@ -71,3 +76,50 @@
 .closed {
   display: none;
 }
+
+.header-container {
+  position: relative;
+  top: 45%;
+  text-align: center;
+  color: white;
+}
+.header-title {
+  font-size: 50px;
+  font-weight: 800;
+}
+.header-subtitle {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 200px;
+  padding: 20px;
+  border-top: 1px solid rgb(211, 211, 211);
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.fab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 60px;
+  background-color: black;
+  color: #fff;
+  font-size: 30px;
+  border-radius: 50%;
+  text-align: center;
+}
+/* .fa-twitter {
+  margin: auto;
+} */

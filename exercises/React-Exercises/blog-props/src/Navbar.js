@@ -6,8 +6,8 @@ const Navbar = ({on, toggle}) => {
     return (
         <div className="Nav">
             <div className="navbar">
-                <a href="#" className="navBrand">Start Bootstrap</a>
-                <button className="menu-btn"  onClick={toggle}>MENU <i class='fas fa-bars'></i></button> 
+                <a href="/" className="navBrand">Start Bootstrap</a>
+                <button className="menu-btn"  onClick={toggle}>MENU <i className='fas fa-bars'></i></button> 
             </div>
             <div className="navbar-nav">
                 <ul className={on ? "open" : "closed"}>
