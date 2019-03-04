@@ -7,10 +7,18 @@ class Form extends Component {
         this.state = {
             title: '',
             description: '',
-            url: '',
-            id: 1
+            imgUrl: ''
         } 
     }
+
+    componentDidMount() {
+        if(this.props.type === "edit"){
+            let {title, description, imgUrl } = this.props.item
+            this.setState({title, description, imgUrl})
+        }
+    }
+    
+
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
@@ -19,30 +27,28 @@ class Form extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        let {title, description, url } = this.state;
-        let newObj = {
-            title,
-            description,
-            url
-        }
-        //get it onto StateHolder
-        this.props.addObjs(newObj)
+        if(this.props.type === "add"){
+            this.props.addObjs(this.state)
+        }else {
+            this.props.editUgly(this.props.item._id, this.state)
+            this.props.toggle()
+        } 
         //clear inputs
         this.setState({
             title: "",
             description: "",
-            url: ""
+            imgUrl: ""
         })
     }
     render(){
         return (
             <form onSubmit={this.handleSubmit}>
                 <fieldset>
-                    <legend>Enter your ugly thing</legend>
+                    <legend>{this.props.type === "add" ? "Enter" : "Edit"} your ugly thing</legend>
                     <input type="text" name="title" id="title" onChange={this.handleChange} value={this.state.title} placeholder="title" />
                     <input type="text" name="description" id="description" onChange={this.handleChange} value={this.state.description} placeholder="description" />
-                    <input type="text" name="url" id="url" onChange={this.handleChange} value={this.state.url} placeholder="image url" />
-                    <button type="submit">Submit</button>
+                    <input type="text" name="imgUrl" id="imgUrl" onChange={this.handleChange} value={this.state.imgUrl} placeholder="image url" />
+                    <button>{this.props.button}</button>
                 </fieldset>
             </form>
         )

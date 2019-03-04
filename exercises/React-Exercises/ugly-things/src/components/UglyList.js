@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
+import Ugly from "./Ugly";
 import {withState} from "../shared/StateHolder";
 
 class UglyList extends Component {
+    componentDidMount() {
+        this.props.getUglies()
+    }
+    
 
     render() {
         let mappedUglies = this.props.array.map(item => {
             return (
-                <div key={Math.random() + item.url}>
-                    <h1>{item.title}</h1>
-                    <h2>{item.description}</h2>
-                    <img src={item.url} alt={item.description}/>
-                </div>
+                <Ugly 
+                    key={item._id} 
+                    item={item} 
+                />
             )
         })
         return (

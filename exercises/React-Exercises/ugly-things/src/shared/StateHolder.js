@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 const {Provider, Consumer} = React.createContext()
 
 class StateHolder extends Component {
@@ -6,21 +7,46 @@ class StateHolder extends Component {
         super()
         //this is the global state
         this.state = {
-            array: [
-                {
-                    title: "Shia Lebeouf",
-                    description: "Gods gift to man",
-                    url: "https://www.thewrap.com/wp-content/uploads/2014/05/shialabeouf.jpg"
-                }
-            ]
+            array: []
         }
     }
 
+    //get
+    getUglies = () => {
+        axios.get("https://api.vschool.io/shia/todo/").then(res => {
+            this.setState({array: res.data})
+        })
+    }
+    
+    //post
     addObjs = (newObj) => {
-        this.setState(prevState => {
-            return {
-                array: [newObj, ...prevState.array]
-            }
+        axios.post("https://api.vschool.io/shia/todo/", newObj).then(res => {
+            this.setState(prevState => {
+                return {
+                    array: [res.data, ...prevState.array]
+                }
+            })
+        })
+    }
+
+    //put 
+    editUgly = (id, editedUgly) => {
+        axios.put(`https://api.vschool.io/shia/todo/${id}`, editedUgly).then(res => {
+            this.setState(prevState => {
+                return {
+                    array: prevState.array.map(item => item._id === id ? item = res.data : item)
+                }
+            })
+        })
+    }
+
+    //delete 
+    deleteUgly = (id) => {
+        axios.delete(`https://api.vschool.io/shia/todo/${id}`).then(res => {
+            this.setState(prevState => ({
+                array: prevState.array.filter(item => item._id !== id),
+
+            }))
         })
     }
 
@@ -28,8 +54,11 @@ class StateHolder extends Component {
         return (
             <Provider value={{
                 addObjs: this.addObjs,
+                getUglies: this.getUglies,
+                editUgly: this.editUgly,
+                deleteUgly: this.deleteUgly,
                 ...this.state
-                }}>
+            }}>
                 {this.props.children}
             </Provider>
         );
