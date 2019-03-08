@@ -7,23 +7,34 @@ export default class StateHolder extends React.Component {
     constructor(){
         super()
         this.state = {
-            arr: []
+            arr: [],
+            selectedItem: {},
+            searchError: false
         }
     }
 
     getData = (title, year) => {
-        console.log(`http://www.omdbapi.com/?apikey=${api_key}&t=${title}&y=${year}`)
-        axios.get(`http://www.omdbapi.com/?apikey=${api_key}&t=${title}&plot=full&y=${year}`).then(res => {
-            this.setState({ arr: [res.data]})
-            console.log('this.state.arr',this.state.arr)
+        axios.get(`http://www.omdbapi.com/?apikey=${api_key}&s=${title}`).then(res => {
+            console.log("response from api", res.data)
+            res.data.Response === "False" ? 
+            this.setState({searchError: true})
+            :
+            this.setState({ arr: res.data.Search, searchError: false})
         })
     }
 
+    getSeletedItem = (id) => {
+        axios.get(`http://www.omdbapi.com/?apikey=${api_key}&i=${id}&plot=full`).then(res => {
+            console.log("selected Item from api",res.data)
+            this.setState({selectedItem: res.data})
+        })
+    }
 
     render(){
         return (
             <Provider value={{
                 getData: this.getData,
+                getSeletedItem: this.getSeletedItem,
                 ...this.state
             }}>
                 {this.props.children}

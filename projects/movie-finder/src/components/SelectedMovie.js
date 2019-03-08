@@ -1,28 +1,35 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { withState } from '../shared/StateHolder';
 
-const SelectedMovie = (props) => {
-    let {items} = props;
-    console.log(items)
-    return (
-        <div>
-            {items.Response === "False" ? 
-                <div>
-                    <h1>Sorry we couldn't find any movies with that title.</h1>
-                    <Link to="/search"><button>Try a different search</button></Link>
+class SelectedMovie extends React.Component {
+    componentDidMount() {
+        this.props.getSeletedItem(this.props.match.params.id)
+    }
+
+
+    render() {
+        let { selectedItem } = this.props;
+        return (
+            <div>
+                <button onClick={() => this.props.history.goBack()}>Back to search results</button>
+                <div key={selectedItem.imdbID}>
+                    {selectedItem.Poster === "N/A" ?
+                        <img src="https://www.metrorollerdoors.com.au/wp-content/uploads/2018/02/unavailable-image.jpg" alt="" />
+                        :
+                        <img src={selectedItem.Poster} alt="Movie Poster Unavailable" />
+                    }
+                    <h1>{selectedItem.Title}</h1>
+                    <p>({selectedItem.Year})</p>
+                    <p><b>Rated:</b> {selectedItem.Rated}</p>
+                    <p>Genre: {selectedItem.Genre}</p>
+                    <p>Plot: {selectedItem.Plot}</p>
+                    <p>Director: {selectedItem.Director}</p>
+                    <p>Actors: {selectedItem.Actors}</p>
+                    {selectedItem.Website !== "N/A" ? <a href={selectedItem.Website} target="blank">Website</a> : null}
                 </div>
-                :
-                <div key={items.imdbID}>
-                    <img style={{height: 200, width: 140}} src={items.Poster} alt={items.Title}/>
-                    <h1>{items.Title}</h1>
-                    <p>({items.Year})</p>
-                    <p>Genre: {items.Genre}</p>
-                    <p>{items.Plot}</p>
-                </div>
-            }
-        </div>
-        
-    )
+            </div>
+        )
+    }
 };
 
-export default SelectedMovie;
+export default withState(SelectedMovie);

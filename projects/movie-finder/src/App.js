@@ -6,6 +6,7 @@ import { Switch, Route } from "react-router-dom"
 import Form from "./components/Form";
 import './App.css';
 import ResultsList from './components/ResultsList';
+import SelectedMovie from './components/SelectedMovie';
 
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/search" component={Form}/>
           <Route path="/results" component={ResultsList}/>
+          <Route path="/selected-movie/:id" component={SelectedMovie} />
         </Switch>
         <Footer />
       </div>

@@ -26,13 +26,15 @@ class Form extends Component {
     }
     render(){
         return (
-            <form onSubmit={this.handleSubmit}>
-                <fieldset>
+            <form onSubmit={this.handleSubmit} className="Form">
                     <legend>Search for a movie</legend>
-                    <input type="text" name="title" id="title" onChange={this.handleChange} value={this.state.title} placeholder="Title" required />
-                    <input type="text" name="year" id="year" onChange={this.handleChange} value={this.state.year} placeholder="year"/>
-                    <button>Submit</button>
-                </fieldset>
+                    <div className="input-container">
+                        <label htmlFor="title"></label>
+                        <input type="text" name="title" id="title" onChange={this.handleChange} value={this.state.title} placeholder="Title" required />
+                        <label htmlFor="year"></label>
+                        <input type="text" name="year" id="year" onChange={this.handleChange} value={this.state.year} placeholder="year *optional"/>
+                        <button className="form-btn">Submit</button>
+                    </div>
             </form>
         )
     }
