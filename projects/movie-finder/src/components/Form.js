@@ -30,9 +30,9 @@ class Form extends Component {
                     <legend>Search for a movie</legend>
                     <div className="input-container">
                         <label htmlFor="title"></label>
-                        <input type="text" name="title" id="title" onChange={this.handleChange} value={this.state.title} placeholder="Title" required />
+                        <input type="text" name="title" id="title" onChange={this.handleChange} value={this.state.title} placeholder="*Title" required />
                         <label htmlFor="year"></label>
-                        <input type="text" name="year" id="year" onChange={this.handleChange} value={this.state.year} placeholder="year *optional"/>
+                        <input type="text" name="year" id="year" onChange={this.handleChange} value={this.state.year} placeholder="Year"/>
                         <button className="form-btn">Submit</button>
                     </div>
             </form>

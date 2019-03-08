@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const ResultsList = (props) => {
     let mappedMovies = props.arr.map(item => {
         return (
-            <div className="list-item" key={item.imdbID}>
+            <div className="movie-list" key={item.imdbID}>
                 <Link to={`/selected-movie/${item.imdbID}`}>
-                    <div>
+                    <div className="list-item">
                         {item.Poster === "N/A" ? 
                             <img src="https://www.metrorollerdoors.com.au/wp-content/uploads/2018/02/unavailable-image.jpg" alt=""/> 
                             : 
