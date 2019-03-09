@@ -1,21 +1,12 @@
 
-
-let updatedObject = {
-    title: "This is an updated todo",
-    description: "Oh double wow!"
-}
-
 axios.get("https://api.vschool.io/amy/todo").then(response => {
     displayTodos(response.data)
 }).catch(error => console.log(error))
 
 
-
-
-
 function displayTodos(dataArr){
     for(let i = 0; i < dataArr.length; i++){
-        // //create elements to display
+        //create elements to display
         let listItem = document.createElement("div");
         let h1 = document.createElement("h1");
         let pTag = document.createElement("p");
@@ -39,7 +30,6 @@ function displayTodos(dataArr){
 
         // check for items marked done
         if(dataArr[i].completed){
-            // listItem.style.textDecoration = "line-through"
             listItem.classList.add("done")
         }
         // append to the dom
@@ -66,7 +56,6 @@ function addTodo(e){
         description: newDescription,
         imgUrl: newImgUrl})
     .then((response)=>{
-        // dataArr.push(response.data)
         displayTodos([response.data])
         form.title.value = ""
         form.description.value = ""
@@ -110,25 +99,26 @@ function markDone(e){
 }
 
 
-
+//Adds 
 // axios.post("https://api.vschool.io/amy/todo", newObject).then(function(response){
 //     console.log(response.data)
 // }).catch(function(error){
 //     console.log(error)
 // })
 
+//Edits
 // axios.put(`https://api.vschool.io/amy/todo/${id}`, updatedObject).then(function(response){
 //     console.log(response.data)
 // }).catch(function(error){
 //     console.log(error)
 // })
 
+//Deletes
 // axios.delete(`https://api.vschool.io/amy/${id}`).then(function(response){
 //     console.log(response.data)
 // }).catch(function(error){
 //     console.log(error)
 // })
-`fgfghjf ${java.script}`
 
 
 
