@@ -91,7 +91,8 @@ img {
 
 .home-message {
   margin-bottom: 10px;
-  font-size: 22pt;
+  font-size: 21pt;
+  text-shadow: 2px 2px 2px #707070;
 }
 
 .Home button{
@@ -102,6 +103,7 @@ img {
   margin: 10px auto;
   font-size: 9pt;
   font-weight: 500;
+  box-shadow: 2px 2px 5px #707070;
 }
 
 .movie-list {
@@ -118,15 +120,70 @@ img {
   width: 300px;
 }
 
-@media only screen and (min-width: 375px ) and (min-height: 667px) {
+@media(min-width: 375px ) {
   .Home {
-    height: 93vh;
+    height: 91vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly; 
     padding: 30px;
   }
+  .Home button {
+    font-size: 12pt;
+  }
   .header-title {
     font-size: 20pt;
+  }
+}
+
+@media(min-width: 1024px){
+  .Home {
+    height: 87vh;
+    justify-content: center;
+    padding: 9%;
+  }
+  .header-title, .home-message, legend {
+    font-size: 30pt;
+  }
+  .Form {
+    width: 70%;
+  }
+  .input-container input, .form-btn {
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  .list-item {
+    width: 500px;
+    display: grid;
+    grid-template-areas: "pic title title"
+                         "pic title title"
+                         "pic type type";
+  }
+  img {
+    grid-area: pic;
+  }
+  .list-item h1 {
+    grid-area: title;
+    font-size: 25pt;
+    padding: 10px;
+  }
+  .list-item p {
+    grid-area: type;
+  }
+}
+
+@media(min-width: 1280px){
+  .Home {
+    height: 89vh;
+  }
+}
+
+@media(min-width: 1440px){
+  .Home {
+    padding: 0;
+  }
+  .home-message {
+    padding: 0 10%;
   }
 }
