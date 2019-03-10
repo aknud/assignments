@@ -1,6 +1,7 @@
 import React from "react"
 import {withState} from "./../shared/StateHolder";
 import { Link } from "react-router-dom";
+import Button from "./../shared/Button";
  
 const ResultsList = (props) => {
     let mappedMovies = props.arr.map(item => {
@@ -14,7 +15,7 @@ const ResultsList = (props) => {
                             <img src={item.Poster} alt="Movie Poster Unavailable"/>
                         }
                         <h1>{item.Title}</h1>
-                        <p>Type: {item.Type}</p>
+                        <p>{item.Type}</p>
                     </div>
                 </Link>
             </div>
@@ -25,10 +26,11 @@ const ResultsList = (props) => {
             {props.searchError ? 
                 <>
                     <h1>Sorry we couldn't find any movies with that title.</h1>
-                    <Link to="/search"><button>Try a different search</button></Link>
+                    <Link to="/search"><Button className="back-btn" buttonText="Try a different search" /></Link>
                 </> 
                 :
                 <>
+                <Button className="back-btn" onClick={()=> props.history.replace("/search")} buttonText="Back to Search" />
                 {mappedMovies}
                 </>
             }

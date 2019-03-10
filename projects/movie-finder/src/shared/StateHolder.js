@@ -14,8 +14,7 @@ export default class StateHolder extends React.Component {
     }
 
     getData = (title, year) => {
-        axios.get(`http://www.omdbapi.com/?apikey=${api_key}&s=${title}`).then(res => {
-            console.log("response from api", res.data)
+        axios.get(`http://www.omdbapi.com/?apikey=${api_key}&s=${title}&year=${year}`).then(res => {
             res.data.Response === "False" ? 
             this.setState({searchError: true})
             :
@@ -25,7 +24,6 @@ export default class StateHolder extends React.Component {
 
     getSeletedItem = (id) => {
         axios.get(`http://www.omdbapi.com/?apikey=${api_key}&i=${id}&plot=full`).then(res => {
-            console.log("selected Item from api",res.data)
             this.setState({selectedItem: res.data})
         })
     }

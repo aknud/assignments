@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {withState} from "./../shared/StateHolder";
+import Button from "./../shared/Button";
 
 class Form extends Component {
     constructor(){
@@ -10,7 +11,6 @@ class Form extends Component {
             genre: ''
         } 
     }
-    
 
     handleChange = (e) => {
         this.setState({
@@ -24,6 +24,7 @@ class Form extends Component {
         this.props.getData(titleString.replace(" ", "+"), this.state.year)
         this.props.history.replace("/results")
     }
+    
     render(){
         return (
             <form onSubmit={this.handleSubmit} className="Form">
@@ -33,7 +34,7 @@ class Form extends Component {
                         <input type="text" name="title" id="title" onChange={this.handleChange} value={this.state.title} placeholder="*Title" required />
                         <label htmlFor="year"></label>
                         <input type="text" name="year" id="year" onChange={this.handleChange} value={this.state.year} placeholder="Year"/>
-                        <button className="form-btn">Submit</button>
+                        <Button className="form-btn" buttonText="Submit" />
                     </div>
             </form>
         )

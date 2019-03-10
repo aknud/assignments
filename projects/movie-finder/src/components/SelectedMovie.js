@@ -1,5 +1,6 @@
 import React from 'react';
 import { withState } from '../shared/StateHolder';
+import Button from "./../shared/Button";
 
 class SelectedMovie extends React.Component {
     componentDidMount() {
@@ -10,9 +11,10 @@ class SelectedMovie extends React.Component {
     render() {
         let { selectedItem } = this.props;
         return (
-            <div>
-                <button onClick={() => this.props.history.goBack()}>Back to search results</button>
-                <div key={selectedItem.imdbID}>
+            <div className="selected-container">  
+                <Button className="selected-btn"
+                onClick={() => this.props.history.goBack()} buttonText="Back to Search Results"></Button>
+                <div key={selectedItem.imdbID} className="movie-info">
                     {selectedItem.Poster === "N/A" ?
                         <img src="https://www.metrorollerdoors.com.au/wp-content/uploads/2018/02/unavailable-image.jpg" alt="" />
                         :

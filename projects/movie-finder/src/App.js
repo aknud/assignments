@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Footer from "./components/Footer"
+// import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Home from "./components/Home";
 import { Switch, Route } from "react-router-dom"
@@ -10,9 +10,6 @@ import SelectedMovie from './components/SelectedMovie';
 
 
 class App extends Component {
-
-  
-  
 
   render() {
     return (
@@ -27,7 +24,7 @@ class App extends Component {
             <Route path="/selected-movie/:id" component={SelectedMovie} />
           </Switch>
         </div>
-        
+        {/* <Footer /> */}
       </div>
     );
   }
