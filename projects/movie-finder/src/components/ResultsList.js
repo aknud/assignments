@@ -15,7 +15,7 @@ const ResultsList = (props) => {
                             <img src={item.Poster} alt="Movie Poster Unavailable"/>
                         }
                         <h1>{item.Title}</h1>
-                        <p>{item.Type}</p>
+                        <p>({item.Type})</p>
                     </div>
                 </Link>
             </div>
@@ -30,8 +30,10 @@ const ResultsList = (props) => {
                 </> 
                 :
                 <>
-                <Button className="back-btn" onClick={()=> props.history.replace("/search")} buttonText="Back to Search" />
-                {mappedMovies}
+                    <Button className="back-btn" onClick={()=> props.history.replace("/search")} buttonText="Back to Search" />
+                    <div className="movie-results">
+                        {mappedMovies}
+                    </div>
                 </>
             }
         </div>

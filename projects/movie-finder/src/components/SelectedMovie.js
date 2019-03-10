@@ -16,18 +16,18 @@ class SelectedMovie extends React.Component {
                 onClick={() => this.props.history.goBack()} buttonText="Back to Search Results"></Button>
                 <div key={selectedItem.imdbID} className="movie-info">
                     {selectedItem.Poster === "N/A" ?
-                        <img src="https://www.metrorollerdoors.com.au/wp-content/uploads/2018/02/unavailable-image.jpg" alt="" />
+                        <img className="selectedImg" src="https://www.metrorollerdoors.com.au/wp-content/uploads/2018/02/unavailable-image.jpg" alt="" />
                         :
-                        <img src={selectedItem.Poster} alt="Movie Poster Unavailable" />
+                        <img className="selectedImg" src={selectedItem.Poster} alt="Movie Poster Unavailable" />
                     }
                     <h1>{selectedItem.Title}</h1>
                     <p>({selectedItem.Year})</p>
                     <p><b>Rated:</b> {selectedItem.Rated}</p>
-                    <p>Genre: {selectedItem.Genre}</p>
-                    <p>Plot: {selectedItem.Plot}</p>
-                    <p>Director: {selectedItem.Director}</p>
-                    <p>Actors: {selectedItem.Actors}</p>
-                    {selectedItem.Website !== "N/A" ? <a href={selectedItem.Website} target="blank">Website</a> : null}
+                    <p><b>Genre: </b> {selectedItem.Genre}</p>
+                    <p><b>Plot: </b> {selectedItem.Plot}</p>
+                    <p><b>Director: </b> {selectedItem.Director}</p>
+                    <p><b>Actors: </b> {selectedItem.Actors}</p>
+                    {selectedItem.Website !== "N/A" ? <a href={selectedItem.Website} target="blank"><i>Website</i></a> : null}
                 </div>
             </div>
         )

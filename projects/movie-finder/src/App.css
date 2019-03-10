@@ -134,6 +134,13 @@ img {
   width: 275px;
 }
 
+.list-item h1 {
+  font-size: 14pt;
+}
+.list-item p {
+  font-size: 10pt;
+}
+
 .selected-container {
   margin: 20px;
   background-color: #919191;
@@ -144,12 +151,28 @@ img {
   justify-content: center;
   align-items: center;
 }
-
+.selectedImg {
+  height: 336px;
+  width: 225px;
+  margin: 10px 0;
+}
 .selected-btn {
   padding: 10px;
   border-radius: 7px;
   background-color: #5951B7;
   color: #fff;
+}
+
+.movie-info {
+  margin: 10px 0;
+  color: #5951B7;
+}
+.movie-info p {
+  padding: 10px 0;
+}
+.movie-info a:hover {
+  color: #fff;
+  font-size: 14pt;
 }
 
 @media(min-width: 375px ) {
@@ -188,29 +211,54 @@ img {
   .list-item {
     width: 500px;
     display: grid;
-    grid-template-areas: "pic title title"
-                         "pic title title"
-                         "pic type type";
+    grid-template-columns: repeat(3, 33.3%);
+    grid-template-rows: repeat(3, 33.3%);
+    grid-template-areas: "pic title title" "pic title title" "pic type .";
   }
   img {
     grid-area: pic;
   }
   .list-item h1 {
     grid-area: title;
-    font-size: 25pt;
-    padding: 10px;
+    font-size: 22pt;
+    text-align: start;
   }
   .list-item p {
     grid-area: type;
+    text-align: start;
+    align-self: end;
   }
   .back-btn {
     font-size: 12pt;
+  }
+  .selectedImg {
+    height: 436px;
+    width: 300px;
+  }
+  .selected-container {
+    margin: 5% 12%;
+    padding: 3% 7%;
+  }
+  .selected-btn {
+    padding: 15px;
+    font-size: 12pt;
+  }
+  .movie-info {
+    font-size: 14pt;
   }
 }
 
 @media(min-width: 1280px){
   .Home {
     height: 89vh;
+  }
+  .movie-info {
+    font-size: 18pt;
+  }
+  .movie-results {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -220,5 +268,23 @@ img {
   }
   .home-message {
     padding: 0 10%;
+  }
+  .selectedImg {
+    height: 736px;
+    width: 600px;
+  }
+}
+
+@media(min-width: 1920px){
+  .movie-results {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .selected-btn {
+    padding: 20px;
+    font-size: 16pt;
+  }
+  .selectedImg {
+    height: 836px;
+    width: 700px;
   }
 }
