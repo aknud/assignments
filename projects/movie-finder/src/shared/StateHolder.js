@@ -9,7 +9,10 @@ export default class StateHolder extends React.Component {
         this.state = {
             arr: [],
             selectedItem: {},
-            searchError: false
+            searchError: false,
+            searchTitle: "",
+            pagesArray: [],
+            currentPage: 1
         }
     }
 
@@ -18,7 +21,12 @@ export default class StateHolder extends React.Component {
             res.data.Response === "False" ? 
             this.setState({searchError: true})
             :
-            this.setState({ arr: res.data.Search, searchError: false})
+            this.setState({ 
+                arr: res.data.Search, 
+                searchError: false,
+                searchTitle: title
+            })
+            this.makePages(Math.ceil(res.data.totalResults / 10))
         })
     }
 
@@ -28,11 +36,29 @@ export default class StateHolder extends React.Component {
         })
     }
 
+    makePages = (pages) => {
+        let pagesArr = []
+        for(let i = 1; i <= pages; i++){
+            pagesArr.push(i)
+        }
+        this.setState({pagesArray: pagesArr})
+    }
+
+    getMore = (title, page, year) => {
+        axios.get(`http://www.omdbapi.com/?apikey=${api_key}&s=${title}&page=${page}&year=${year}`).then(res => {
+            this.setState({
+                arr: res.data.Search,
+                currentPage: page
+            })
+        })
+    }
+
     render(){
         return (
             <Provider value={{
                 getData: this.getData,
                 getSeletedItem: this.getSeletedItem,
+                getMore: this.getMore,
                 ...this.state
             }}>
                 {this.props.children}

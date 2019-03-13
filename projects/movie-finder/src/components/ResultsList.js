@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Button from "./../shared/Button";
  
 const ResultsList = (props) => {
+    console.log(props)
     let mappedMovies = props.arr.map(item => {
         return (
             <div className="movie-list" key={item.imdbID}>
@@ -21,6 +22,13 @@ const ResultsList = (props) => {
             </div>
         )
     })
+    let pages = props.pagesArray.map(page => {
+        return (
+            <div key={page}>
+                <div style={{border: "1px solid black"}} onClick={()=> props.getMore(props.searchTitle, page)}>{page}</div>
+            </div>
+        )
+    })
     return (
         <div>
             {props.searchError ? 
@@ -33,6 +41,9 @@ const ResultsList = (props) => {
                     <Button className="back-btn" onClick={()=> props.history.replace("/search")} buttonText="Back to Search" />
                     <div className="movie-results">
                         {mappedMovies}
+                    </div>
+                    <div>
+                        {pages}
                     </div>
                 </>
             }
