@@ -38,7 +38,8 @@ app.put("/food/:id", (req, res) => {
             item = Object.assign(item, updatedObj)
         }
     })
-    res.send(database.find(item => item.id === id))
+    let found = database.find(item => item.id === id)
+    found ? res.send(found) : res.send("Couldn't find item with that id.")
 })
 
 
