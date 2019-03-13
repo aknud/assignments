@@ -12,7 +12,8 @@ app.get("/todos", (req, res) => {
 })
 app.get("/todos/:id", (req, res) => {
     const {id} = req.params;
-    res.send(database.find(item => item.id === id))
+    let found = database.find(todo => todo.id === id)
+    found ? res.send(found) : res.send("Todo not found")
 })
 app.post("/todos", (req, res) => {
     let newObj = req.body
@@ -30,14 +31,19 @@ app.put("/todos/:id", (req, res) => {
             item = Object.assign(item, updatedObj)
         }
     })
-    res.send(database.find(item => item.id === id))
+    let found = database.find(item => item.id === id)
+    found ? res.send(found) : res.send("That todo doesn't exist")
 })
 
 app.delete("/todos/:id", (req, res) => {
     const {id} = req.params;
-    const index = database.indexOf(item => item.id === id)
-    database.splice(index, 1)
-    res.sendStatus(200)
+    const index = database.findIndex(item => item.id === id)
+    if(index !== -1){
+        database.splice(index, 1)
+        res.sendStatus(200)
+    } else {
+        res.send("That todo don't exist, YO")
+    }
 })
 
 
