@@ -11,7 +11,12 @@ class App extends Component {
         <h1>Bounty Hunter Part III</h1>
         <Toggle render={({on, toggler}) => {
             return (
-              <button onClick={toggler}>{on ? <Form /> : "Add another bounty" }</button>
+              <>
+                {on ? 
+                <Form button="Submit" type="add" toggle={toggler}/>
+                :
+                <button onClick={toggler}>Add New Bounty</button>}
+              </>
             )
           }}/>
         <Bounties />

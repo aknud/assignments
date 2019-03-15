@@ -9,8 +9,8 @@ class Bounties extends React.Component {
     
 
     render(){
-        console.log(111, this.props)
-        let mappedBounties = this.props.bounties.map(bounty => <Bounty key={bounty._id} payload={bounty}/>)
+        let mappedBounties = this.props.bounties.map(bounty => 
+        <Bounty key={bounty._id} payload={bounty}/>)
         return (
             <div>
                 {mappedBounties}

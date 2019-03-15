@@ -23,14 +23,14 @@ bountyRoute.route("/")
 bountyRoute.route("/:_id")
     .get((req, res) => {
         const {_id} = req.params
-        BountyMakers.findById(_id,(err, bounty) => {
+        BountyMakers.findById({_id},(err, bounty) => {
             if(err) return res.status(500).send(err)
             res.status(200).send(bounty)
         })
     })
     .put((req, res) => {
         const {_id} = req.params;
-        BountyMakers.findByIdAndUpdate({_id}, req.body, (err, bounty) => {
+        BountyMakers.findOneAndUpdate({_id}, req.body, {new: true}, (err, bounty) => {
             err && res.status(500).send(err)
             return res.status(200).send(bounty)
         })

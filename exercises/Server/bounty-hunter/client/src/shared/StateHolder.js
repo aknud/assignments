@@ -6,9 +6,7 @@ class StateHolder extends Component {
     constructor(){
         super()
         this.state = {
-            bounties: [],
-            bounty: {},
-            
+            bounties: []            
         }
     }
 
@@ -24,12 +22,22 @@ class StateHolder extends Component {
     }
     addBounty = (newBounty) => {
         axios.post("/bounty", newBounty).then(res => {
-            console.log(res.data)
+            this.setState(prevState => {
+                return {
+                    bounties: [...prevState.bounties, res.data]
+                }
+            })
+
         })
     }
     editBounty = (_id, updatedBounty) => {
         axios.put(`/bounty/${_id}`, updatedBounty).then(res => {
             console.log(res.data)
+            this.setState(prevState => {
+                return {
+                    bounties: prevState.bounties.map(bounty => bounty._id === _id ? bounty = updatedBounty : bounty)
+                }
+            })
         })
     }
     deleteBounty = (_id) => {
@@ -47,7 +55,7 @@ class StateHolder extends Component {
                 getBounties: this.getBounties,
                 getBounty: this.getBounty,
                 addBounty: this.addBounty,
-                editbounty: this.editBounty,
+                editBounty: this.editBounty,
                 deleteBounty: this.deleteBounty,
                 ...this.state
             }}>
