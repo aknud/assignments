@@ -1,9 +1,9 @@
 const express = require("express")
-const bountyRouter = express.Router()
+const bountyRoute = express.Router()
 const BountyMakers = require("./../model/bounty");
 
 
-bountyRouter.route("/")
+bountyRoute.route("/")
     .get((req, res) => {
         BountyMakers.find((err, bounties) => {
             if(err) return res.status(500).send(err)
@@ -11,8 +11,7 @@ bountyRouter.route("/")
         })
     })
     .post((req, res, next) => {
-        let newBountyData = req.body
-        let newBountyObj = new BountyMakers(newBountyData)
+        let newBountyObj = new BountyMakers(req.body)
         newBountyObj.save()
         .then((savedBounty) => res.status(201).send(savedBounty))
         .catch(err => {
@@ -21,32 +20,27 @@ bountyRouter.route("/")
         })
     })
 
-bountyRouter.route("/:_id")
+bountyRoute.route("/:_id")
     .get((req, res) => {
         const {_id} = req.params
-        let bounty = database.find(bounty => bounty._id === _id)
-        bounty ? res.send(bounty) : res.send("Bounty doesn't exist.")
+        BountyMakers.findById(_id,(err, bounty) => {
+            if(err) return res.status(500).send(err)
+            res.status(200).send(bounty)
+        })
     })
     .put((req, res) => {
         const {_id} = req.params;
-        let updatedBounty = req.body;
-        database.forEach(bounty => {
-            if(bounty._id === _id){
-                bounty = Object.assign(bounty, updatedBounty)
-            }
+        BountyMakers.findByIdAndUpdate({_id}, req.body, (err, bounty) => {
+            err && res.status(500).send(err)
+            return res.status(200).send(bounty)
         })
-        res.send(updatedBounty)
     })
     .delete((req, res) => {
         const {_id} = req.params;
-        BountyMakers.findByIdAndRemove(_id, (err, bounty) => {
+        BountyMakers.findOneAndDelete({_id}, (err, bounty) => {
             if(err) return res.status(500).send(err)
             return res.status(200).send({message: "Bounty successfully deleted.", _id: _id})
         })
-
-        // const index = database.indexOf(bounty => bounty._id === _id)
-        // database.splice(index, 1)
-        // res.sendStatus(200)
     })
 
-module.exports = bountyRouter
+module.exports = bountyRoute
