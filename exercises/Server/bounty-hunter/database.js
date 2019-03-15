@@ -7,6 +7,7 @@ module.exports = [
         living: true,
         bounty: 100,
         type: "Sith",
+        imgUrl: "https://www.thewrap.com/wp-content/uploads/2014/05/shialabeouf.jpg",
         id: uuid.v4()
     },
     {
@@ -15,6 +16,7 @@ module.exports = [
         living: true,
         bounty: 100,
         type: "Jedi",
+        imgUrl: "https://www.thewrap.com/wp-content/uploads/2014/05/shialabeouf.jpg",
         id: uuid.v4()
     },
     {
@@ -23,6 +25,7 @@ module.exports = [
         living: true,
         bounty: 10,
         type: "Jedi",
+        imgUrl: "https://www.thewrap.com/wp-content/uploads/2014/05/shialabeouf.jpg",
         id: uuid.v4()
     },
     {
@@ -31,6 +34,7 @@ module.exports = [
         living: true,
         bounty: 1000,
         type: "Sith",
+        imgUrl: "https://www.thewrap.com/wp-content/uploads/2014/05/shialabeouf.jpg",
         id: uuid.v4()
     },
     {
@@ -39,6 +43,7 @@ module.exports = [
         living: true,
         bounty: 1000,
         type: "Sith",
+        imgUrl: "https://www.thewrap.com/wp-content/uploads/2014/05/shialabeouf.jpg",
         id: uuid.v4()
     },
     {
@@ -47,6 +52,7 @@ module.exports = [
         living: true,
         bounty: 100,
         type: "Jedi",
+        imgUrl: "https://www.thewrap.com/wp-content/uploads/2014/05/shialabeouf.jpg",
         id: uuid.v4()
     }
 ]
