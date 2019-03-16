@@ -15,11 +15,12 @@ class StateHolder extends Component {
             this.setState({bounties: res.data})
         })
     }
-    getBounty = (_id) => {
-        axios.get(`/bounty/${_id}`).then(res => {
-            console.log(res.data)
-        })
-    }
+    //Gets one bounty by id
+    // getBounty = (_id) => {
+    //     axios.get(`/bounty/${_id}`).then(res => {
+    //         console.log(res.data)
+    //     })
+    // }
     addBounty = (newBounty) => {
         axios.post("/bounty", newBounty).then(res => {
             this.setState(prevState => {
@@ -32,10 +33,9 @@ class StateHolder extends Component {
     }
     editBounty = (_id, updatedBounty) => {
         axios.put(`/bounty/${_id}`, updatedBounty).then(res => {
-            console.log(res.data)
             this.setState(prevState => {
                 return {
-                    bounties: prevState.bounties.map(bounty => bounty._id === _id ? bounty = updatedBounty : bounty)
+                    bounties: prevState.bounties.map(bounty => bounty._id === _id ? bounty = res.data : bounty)
                 }
             })
         })

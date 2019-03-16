@@ -6,7 +6,7 @@ import Form from "./../shared/Form"
 const Bounty = (props) => {
     let {payload} = props;
     return (
-        <div className="Bounty">
+        <div className="Bounty" key={payload._id}>
             <h1>{payload.first} {payload.last}</h1>
             <img src={payload.imgUrl} alt="" style={{height: 250, width: 300}}/>
             <h3>Bounty: ${payload.bounty}</h3>

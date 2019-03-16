@@ -20,3 +20,7 @@ class Bounties extends React.Component {
 };
 
 export default withState(Bounties);
+
+//Find out why this proxy error keeps happening.
+//Proxy error: Could not proxy request /bounty from localhost:3000 to http://localhost:3090.
+// See https://nodejs.org/api/errors.html#errors_common_system_errors for more information (ECONNREFUSED).

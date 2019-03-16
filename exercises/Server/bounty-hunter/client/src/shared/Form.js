@@ -33,7 +33,6 @@ class Form extends Component {
         
         } else {
             this.props.editBounty(this.props.payload._id, this.state)
-            console.log(this.props.payload._id)
         }
         this.setState({
             first: "",
