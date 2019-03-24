@@ -175,6 +175,19 @@ img {
   font-size: 14pt;
 }
 
+.page-numbers {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.page {
+  padding: 10px;
+  border: 1px solid black;
+  margin: 5px;
+}
+
 @media(min-width: 375px ) {
   .Home {
     height: 93vh;

@@ -25,7 +25,7 @@ const ResultsList = (props) => {
     let pages = props.pagesArray.map(page => {
         return (
             <div key={page}>
-                <div style={{border: "1px solid black"}} onClick={()=> props.getMore(props.searchTitle, page)}>{page}</div>
+                <div className="page" onClick={()=> props.getMore(props.searchTitle, page)}>{page}</div>
             </div>
         )
     })
@@ -42,7 +42,7 @@ const ResultsList = (props) => {
                     <div className="movie-results">
                         {mappedMovies}
                     </div>
-                    <div>
+                    <div className="page-numbers">
                         {pages}
                     </div>
                 </>
